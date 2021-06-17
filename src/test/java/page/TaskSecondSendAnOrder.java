@@ -32,8 +32,8 @@ public class TaskSecondSendAnOrder extends PageBase {
         wait.until(ExpectedConditions.elementToBeClickable(list.get(i)));
         list.get(i).click();
 
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(@class, \"mfp-content\")]//a[contains(@class, \"add-to-\")]")));
-        WebElement elementButton = driver.findElement(By.xpath("//div[contains(@class, \"mfp-content\")]//a[contains(@class, \"add-to-\")]"));
+
+        WebElement elementButton = driver.findElement(By.xpath("//a[contains(text(), ' корзину')]"));
         elementButton.click();
         return this;
     }
@@ -42,11 +42,16 @@ public class TaskSecondSendAnOrder extends PageBase {
 
 
     public TaskSecondSendAnOrder ScrollMenuToProductCards(){
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(@class, \"productBox\") and not(contains(@class, \"in-stop-list\")) and not (contains(@class, \"action-wrapper\"))]")));
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(@class, \"productBox\")]")));
         JavascriptExecutor je = (JavascriptExecutor) driver;
-        WebElement element = driver.findElement(By.xpath("//div[contains(@class, \"productBox\") and not(contains(@class, \"in-stop-list\")) and not (contains(@class, \"action-wrapper\"))]"));
+        WebElement element = driver.findElement(By.xpath("//div[contains(@class, \"productBox\")]"));
         je.executeScript("arguments[0].scrollIntoView(true);",element);
-
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div [contains(@class, \"productBox\" )]//div[contains(@class, \"image\" )]")));
+        isElementByDisplayed(By.xpath("//div [contains(@class, \"productBox\" )]//div[contains(@class, \"image\" )]"));
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div [contains(@class, \"productBox\" )]//div[contains(@class, \"bottom\" )]")));
+        isElementByDisplayed(By.xpath("//div [contains(@class, \"productBox\" )]//div[contains(@class, \"bottom\" )]"));
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div [contains(@class, \"productBox\" )]//div[contains(@class, \"bottom\" )]//div[contains(@class, \"price\" )]")));
+        isElementByDisplayed(By.xpath("//div [contains(@class, \"productBox\" )]//div[contains(@class, \"bottom\" )]//div[contains(@class, \"price\" )]"));
         return this;
     }
 
@@ -57,7 +62,7 @@ public class TaskSecondSendAnOrder extends PageBase {
         je.executeScript("arguments[0].scrollIntoView(true);",TitleElement);
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@id='catalog']/div[@class='container']/child::div[contains(@class, 'section-title')]")));
         isElementByDisplayed(By.xpath("//div[@id='catalog']/div[@class='container']/child::div[contains(@class, 'section-title')]"));
-        isElementByDisplayed(By.xpath("//div[@id='discounttime_block']/div[contains(@class, 'row')][1]/child::div[contains(@class, 'section-title')][1]"));
+
         /*//a[contains(@class, "highlightable")][1]*/
         /*//section[@id = "recomended"]//div[@class = "section-title"]*/
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(@class, \"highlightable\")][1]")));
@@ -171,11 +176,13 @@ public class TaskSecondSendAnOrder extends PageBase {
         list.get(i).click();
         return this;
     }
+/*
     public TaskSecondSendAnOrder ClickDesert (){
         WebElement desert = driver.findElement(By.xpath("//span[contains(text(), 'Десерты')]"));
         desert.click();
         return this;
     }
+*/
 
 
     public TaskSecondSendAnOrder CheckStatusOrder(){
