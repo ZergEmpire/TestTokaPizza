@@ -10,11 +10,7 @@ import java.net.URL;
 import java.util.Map;
 
 public class FirstTest extends TestBase {
-    @Epic("TestCase")
-    @Feature("FirstScenarioSendOrder")
-    @Severity(SeverityLevel.BLOCKER)
-    @Description("In this test we will check send order")
-    @Story("Scenario For Test Send Order")
+
     @Test
     public void ScenarioForTestSendOrder() {
 
