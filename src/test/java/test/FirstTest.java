@@ -62,7 +62,7 @@ public class FirstTest extends TestBase {
                 .CheckStatusOrder();
 
     }
-    @Feature("CheckDeliveryPage")
+   /* @Feature("CheckDeliveryPage")
     @Severity(SeverityLevel.MINOR)
     @Description("In this test we will check Secondary Site Sections")
     @Story("Scenario For Test Of Secondary Site Sections")
@@ -70,7 +70,7 @@ public class FirstTest extends TestBase {
     public void ScenarioForTesOfSecondarySiteSections() {
         main
                 .goTo();
-                /*.SelectCity()*/
+                *//*.SelectCity()*//*
         taskThreeTestSecondarySS.GoMainPage();
         taskThreeTestSecondarySS.ScrollToFooterMainPage()
                 .CheckElementsInFooterSection()
@@ -83,6 +83,6 @@ public class FirstTest extends TestBase {
                 .GoMainPage()
                 .GoToRulesPayInfo()
                 .GoMainPage();
-    }
+    }*/
 
 }
