@@ -2,6 +2,12 @@ package test;
 
 import io.qameta.allure.*;
 import org.junit.jupiter.api.Test;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
+
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.Map;
 
 public class FirstTest extends TestBase {
     @Epic("TestCase")
@@ -11,6 +17,8 @@ public class FirstTest extends TestBase {
     @Story("Scenario For Test Send Order")
     @Test
     public void ScenarioForTestSendOrder() {
+
+
         main
                 .goTo();
                /* .SelectCity()*/
